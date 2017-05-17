@@ -94,8 +94,8 @@ DATABASES = {
             #'read_default_file': 'db.cnf',
             'init_command': 'SET default_storage_engine=INNODB',
         },
-        'NAME': 'http_db',
-        'USER': 'metlando$',
+        'NAME': 'metlando$http_db',
+        'USER': 'metlando',
         'PASSWORD': 'silnehaslo1',
         'HOST': 'metlando.mysql.pythonanywhere-services.com',   # localhost Or an IP Address that your DB is hosted on
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
