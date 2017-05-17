@@ -1,0 +1,86 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Button details{% endblock %}
+
+{% block page_header %}Button details{% endblock %}
+
+{% block content %}
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">BUTTON ID : {{ button.pk }}</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-2"><b>Tests quantity: </b></div>
+                <div class="col-sm-6">
+                    {{tests_quantity}}
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm-3">
+                    <b>Global correct work:</b>
+                </div>
+                {% if button.global_working_percentage == None %}
+                    No tests done yet...
+                {% else %}
+                    <div class="col-sm-6">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{button.global_working_percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{button.global_working_percentage}}%">
+                              {{ button.global_working_percentage }}%
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div><br/>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <b>Last month correct work:</b>
+                </div>
+                {% if button.last_month_working_percentage == None %}
+                    No tests done yet...
+                {% else %}
+                    <div class="col-sm-6">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{button.last_month_working_percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{button.last_month_working_percentage}}%">
+                              {{ button.last_month_working_percentage }}%
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div><br/>
+
+            <div class="row">
+                <div class="col-sm-2"><b>Locator:</b></div><div class="col-sm-10">{{ button.locator }}</div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+ jQuery(document).ready(function($) {
+
+    $("div.progress-bar").each(function(){
+        var value=$(this).attr("aria-valuenow");
+
+        if(value>75)
+        {
+            $( this ).addClass("progress-bar-success");
+        }
+        else if(value<75 && value >25)
+        {
+            $( this ).addClass("progress-bar-warning");
+        }
+        else if(value<25 && value >10)
+        {
+            $( this ).addClass("progress-bar-danger");
+        }
+        else
+        {
+            $( this ).addClass("progress-bar-danger");
+            $( this ).css("color","black");
+        }
+    });
+
+    });
+</script>
+{% endblock content %}

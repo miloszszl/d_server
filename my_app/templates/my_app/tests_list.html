@@ -1,0 +1,61 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Tests list{% endblock %}
+{% block page_header %}Tests{% endblock %}
+
+{% block content %}
+
+    <table class="table table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>User IPv4</th>
+          <th>User MAC</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for test in tests %}
+        <tr class='clickable-row' data-href="{% url 'test_detail' pk=test.id %}">
+          <td> <a color="black" href="{% url 'test_detail' pk=test.id %}">{{ test.pk }}</a></td>
+          <td>{{ test.date}}</td>
+          <td>{{ test.user.ipv4 }}</td>
+          <td>{{ test.user.mac_address}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+  <div class="row">
+      <div class="text-center">
+  {% if tests.has_other_pages %}
+    <ul class="pagination">
+      {% if tests.has_previous %}
+        <li><a href="?page_number={{ tests.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in tests.paginator.page_range %}
+        {% if tests.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="?page_number={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if tests.has_next %}
+        <li><a href="?page_number={{ tests.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+      </div>
+  </div>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#tests_li").addClass("active");
+  });
+</script>
+{% endblock content %}

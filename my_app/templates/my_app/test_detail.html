@@ -1,0 +1,99 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Test details{% endblock %}
+{% block page_header %}Test details{% endblock %}
+
+{% block content %}
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">TEST ID : {{ test.pk }}</div>
+      <div class="panel-body">
+          <div class="col-sm-1"><b>Date:</b></div><div class="col-sm-11">{{ test.date }}</div>
+      </div>
+    </div>
+
+    <b>User input: <span class="badge">{{ batches|length }}</span></b>
+    <div class="list-group">
+        {% for b in batches %}
+            <div class="list-group-item">
+                <b>Root url: </b>
+                    <a href="{% url 'page_detail' pk=b.page.pk %}">
+                        {{ b.page.address|truncatechars:150 }}
+                    </a>
+                <br/>
+                <b>Levels: </b> {{ b.levels }}
+            </div>
+        {% empty %}
+            <div class="list-group-item">No input ...</div>
+        {% endfor %}
+    </div>
+    {% if batches %}
+    <b>Details:</b><br/>
+    <div class="list-group">
+        {% for pt in pages_tests%}
+            <div class="list-group-item">
+                <b>Tested page: </b>
+                    <a href="{% url 'page_detail' pk=pt.page.pk %}">
+                        {{pt.page.address}}
+                    </a>
+                <br/>
+                <b>Is working: </b>
+                {% if pt.is_working %}
+                  <span class="glyphicon glyphicon-ok text-success"></span>
+                {% else %}
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% endif %}<br/>
+                <b>Domain: </b>
+                {% if pt.page.host is not None %}
+                    <a href="{% url 'host_detail' pk=pt.page.host.pk %}">{{pt.page.host.domain_name}}</a>
+                {% endif %}<br/>
+                <b>Redirection: </b>
+                {% if not pt.redirection or pt.redirection == "" %}
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% else %}
+                    <a href="{% url 'page_detail' pk=pt.redirection.id %}">{{pt.redirection.address}}</a>
+                {% endif %}<br/>
+                <b>Response code: </b>{{pt.response_code}}<br/>
+                <b>Download time[ms]: </b>{{pt.download_time}}<br/>
+                <b>AVG download time[ms]: </b>{{pt.page.avg_download_time}}<br/>
+                <b>Page weight [kB]: </b>{{pt.page.weight}}<br/>
+                <b>Page encoding: </b>{{pt.page.encoding}}<br/>
+                <b>Page cookies: </b>
+                {% if pt.page.cookies_present %}
+                  <span class="glyphicon glyphicon-ok text-success"></span>
+                {% else %}
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% endif %}<br/>
+
+                <br/>
+                <b>Buttons:<span class="badge">{{ pt.t_p_b_pt|length }}</span></b>
+                    <div class="well">
+                        <ul class="list-group">
+                            {%for t_p_b in pt.t_p_b_pt %}
+                                <li class="list-group-item">
+                                    <a href="{% url 'button_detail' button_pk=t_p_b.button.pk page_pk=pt.page.pk %}">
+                                        {% if t_p_b.is_working %}
+                                          <span class="glyphicon glyphicon-ok text-success"></span>
+                                        {% else %}
+                                          <span class="glyphicon glyphicon-remove text-danger"></span>
+                                        {% endif %}
+                                        {{ t_p_b.button.locator|truncatechars:200 }}
+                                    </a>
+                                </li>
+                            {% empty %}
+                                <li class="list-group-item">No buttons...</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#tests_li").addClass("active");
+  });
+</script>
+{% endblock content %}

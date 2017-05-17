@@ -1,0 +1,37 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Users list{% endblock %}
+{% block page_header %}Users{% endblock %}
+
+{% block content %}
+
+    <table class="table table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th>ID</th>
+          <th>IPv4</th>
+          <th>MAC</th>
+          <th>Transfer speed [kb/s]</th>
+          <th>Tests</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for user in users %}
+        <tr class='clickable-row' data-href="{% url 'user_detail' pk=user.id %}">
+          <td> <a color="black" href="{% url 'user_detail' pk=user.id %}">{{ user.pk }}</a></td>
+          <td>{{ user.ipv4}}</td>
+          <td>{{ user.mac_address}}</td>
+          <td>{{ user.transfer_speed}}</td>
+          <td>{{ user.test_u|length}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#users_li").addClass("active");
+  });
+</script>
+{% endblock content %}

@@ -1,0 +1,360 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Page details{% endblock %}
+{% block page_header %}Page details{% endblock %}
+{% block content %}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-11">PAGE ADDRESS : {{page.pk}}</div>
+            <div class="col-sm-1">
+                <a href="{% url 'page_edit' pk=page.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-pencil" style="color:black"></span></a>
+            </div>
+        </div>
+    </div>
+  <div class="panel-body">
+      <div class="row">
+          <div class="col-sm-2"><b>Page address</b></div>
+          <div class="col-sm-10">
+              {% if page.address %}
+                {{page.address}}
+              {% else %}
+                None
+              {% endif %}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2"><b>Weight [kB]:</b></div>
+          <div class="col-sm-10">
+              {% if page.encoding %}
+                {{ page.encoding}}
+              {% else %}
+                None
+              {% endif %}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2"><b>Encoding:</b></div>
+          <div class="col-sm-10">
+              {% if page.encoding %}
+                {{ page.encoding}}
+              {% else %}
+                None
+              {% endif %}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2"><b>Cookies:</b></div>
+          <div class="col-sm-10">
+              {% if page.cookies_present %}
+                  <span class="glyphicon glyphicon-ok text-success"></span>
+              {% else %}
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+              {% endif %}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2"><b>AVG download time[ms]:</b></div>
+          <div class="col-sm-10">
+              {% if page.avg_download_time %}
+                {{ page.avg_download_time}}
+              {% else %}
+                None
+              {% endif %}
+          </div>
+      </div>
+      <!--<div class="row">-->
+          <!--<div class="col-sm-2"><b>Force test:</b></div>-->
+          <!--<div class="col-sm-10">-->
+              <!--{% if page.force_test %}-->
+                  <!--<span class="glyphicon glyphicon-ok text-success"></span>-->
+              <!--{% else %}-->
+                  <!--<span class="glyphicon glyphicon-remove text-danger"></span>-->
+              <!--{% endif %}-->
+          <!--</div>-->
+      <!--</div>-->
+
+  </div>
+</div>
+
+    <b>Page statistics:</b><br/><br/>
+     <div class="row">
+        <div class="col-sm-2">Tests quantity:</div>
+        <div class="col-sm-6">
+            {{tests_quantity}}
+        </div>
+     </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-3">Global page availability:</div>
+        <div class="col-sm-6">
+            {% if page.global_working_percentage is not None %}
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{page.global_working_percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{page.global_working_percentage}}%">
+                    {{page.global_working_percentage}}%
+                </div>
+            </div>
+            {% else %}
+                Not tested yet ...<br/><br/>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">Last month page availability:</div>
+        <div class="col-sm-6">
+            {% if page.last_month_working_percentage is not None %}
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{page.last_month_working_percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{page.last_month_working_percentage}}%">
+                    {{page.last_month_working_percentage}}%
+                </div>
+            </div>
+            {% else %}
+                Not tested yet ...<br/><br/>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">Redirection percentage:</div>
+        <div class="col-sm-6">
+            {% if page.redirection_percentage is not None %}
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{page.redirection_percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{page.redirection_percentage}}%">
+                  {{page.redirection_percentage}}%
+                </div>
+            </div>
+            {% else %}
+                Not tested yet ...<br/><br/>
+            {% endif %}
+        </div>
+
+    </div>
+    <br/><br/>
+    <div class="row">
+        <div class="col-sm-6">
+            <canvas id="resp_code_chart"></canvas>
+        </div>
+        <div class="col-sm-6">
+            <canvas id="time_chart"></canvas>
+        </div>
+    </div>
+    <br/><br/><br/>
+
+    <b>Connections: <span class="badge">{{ links|length }}</span></b>
+    <ul class="list-group">
+        {%for link in links%}
+            <li class="list-group-item"><a href="{% url 'page_detail' pk=link.id %}">{{ link.address }}</a></li>
+        {% empty %}
+            <li class="list-group-item">No connections yet...</li>
+        {% endfor %}
+    </ul>
+
+    <b>Buttons: <span class="badge">{{ buttons|length }}</span></b>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row"><div class="col-sm-6"><b>Locator:</b></div><div class="col-sm-6"></div></div>
+        </li>
+        {%for button in buttons%}
+            <li class="list-group-item">
+                <a href="{% url 'button_detail' button_pk=button.pk page_pk=page.pk %}">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ button.locator|truncatechars:80}}
+                        </div>
+
+                    </div>
+                </a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No buttons...</li>
+        {% endfor %}
+    </ul>
+    <br/><br/>
+
+    {% if pages_tests %}
+    <b>Tests details:</b><br/>
+    <div class="list-group">
+        {% for pt in pages_tests%}
+            <div class="list-group-item">
+                <b>Is working: </b>
+                {% if pt.is_working %}
+                  <span class="glyphicon glyphicon-ok text-success"></span>
+                {% else %}
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% endif %}<br/>
+                <b>Domain: </b>
+                {% if pt.page.host is not None %}
+                    <a href="{% url 'host_detail' pk=pt.page.host.pk %}">{{pt.page.host.domain_name}}</a>
+                {% endif %}<br/>
+                <b>Redirection: </b>
+                {% if not pt.redirection or pt.redirection == "" %}
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% else %}
+                    <a href="{% url 'page_detail' pk=pt.redirection.id %}">{{pt.redirection.address}}</a>
+                {% endif %}<br/>
+                <b>Response code: </b>{{pt.response_code}}<br/>
+                <b>Download time[ms]: </b>{{pt.download_time}}<br/>
+                <b>AVG download time[ms]: </b>{{pt.page.avg_download_time}}<br/>
+                <b>Page weight [kB]: </b>{{pt.page.weight}}<br/>
+                <b>Page encoding: </b>{{pt.page.encoding}}<br/>
+                <b>Page cookies: </b>
+                {% if pt.page.cookies_present %}
+                  <span class="glyphicon glyphicon-ok text-success"></span>
+                {% else %}
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% endif %}<br/>
+
+                <br/>
+                <b>Buttons:<span class="badge">{{ pt.t_p_b_pt|length }}</span></b>
+                    <div class="well">
+                        <ul class="list-group">
+                            {%for t_p_b in pt.t_p_b_pt %}
+                                <li class="list-group-item">
+                                    <a href="{% url 'button_detail' button_pk=t_p_b.button.pk page_pk=pt.page.pk %}">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                {% if t_p_b.is_working %}
+                                                  <span class="glyphicon glyphicon-ok text-success"></span>
+                                                {% else %}
+                                                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                                                {% endif %}
+                                                {{ t_p_b.button.locator|truncatechars:200 }}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            {% empty %}
+                                <li class="list-group-item">No buttons...</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#pages_li").addClass("active");
+
+    $("div.progress-bar").each(function(){
+        var value=$(this).attr("aria-valuenow");
+
+        if(value>75)
+        {
+            $( this ).addClass("progress-bar-success");
+        }
+        else if(value<75 && value >25)
+        {
+            $( this ).addClass("progress-bar-warning");
+        }
+        else if(value<25 && value >10)
+        {
+            $( this ).addClass("progress-bar-danger");
+        }
+        else
+        {
+            $( this ).addClass("progress-bar-danger");
+            $( this ).css("color","black");
+        }
+
+    });
+
+    var endpoint_codes="{% url 'resp_code_data' pk=page.pk %}";
+
+    $.ajax({
+        method:"GET",
+        url:endpoint_codes,
+        success:function(data){
+            if(data!="")
+            {
+                r_chart(data);
+            }
+            else
+            {
+                $("#resp_code_chart").hide();
+            }
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    function r_chart(data){
+        var labels=labels=["1XX", "2XX", "3XX", "4XX", "5XX"];
+        var ctx = document.getElementById("resp_code_chart").getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          options: {
+            title: {
+                display: true,
+                text: 'Response codes chart'
+          }},
+          data: {
+            labels: labels,
+            datasets: [{
+              backgroundColor: [
+                "#2ecc71",
+                "#3498db",
+                "#95a5a6",
+                "#9b59b6",
+                "#f1c40f",
+              ],
+              data:[data[0]['1XX'],data[1]['2XX'],data[2]['3XX'],data[3]['4XX'],data[4]['5XX']]
+            }]
+          }
+        });
+    }
+
+    var endpoint_times="{% url 'time_data' pk=page.pk %}";
+    $.ajax({
+        method:"GET",
+        url:endpoint_times,
+        success:function(data){
+            if(data!="")
+            {
+                    t_chart(data);
+            }
+            else
+            {
+                $("#time_chart").hide();
+            }
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+
+    });
+
+    function t_chart(data){
+        var ctx = document.getElementById("time_chart").getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          options: {
+            title: {
+                display: true,
+                text: 'Download times chart'
+          }},
+          data: {
+            labels: data.intervals,
+            datasets: [{
+              label: 'Download Time',
+              data: data.occurrences,
+              backgroundColor: "rgba(153,255,51,0.6)"
+            }]
+          }
+        });
+    }
+
+
+  });
+
+
+
+
+</script>
+{% endblock content %}

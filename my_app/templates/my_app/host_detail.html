@@ -1,0 +1,39 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Host details{% endblock %}
+{% block page_header %}Host{% endblock %}
+
+{% block content %}
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">HOST ID : {{user.pk}}</div>
+      <div class="panel-body">
+          <div class="col-sm-2"><b>IPv4:</b></div><div class="col-sm-10">{{ host.ipv4}}</div>
+          <div class="col-sm-2"><b>Domain:</b></div><div class="col-sm-10">{{ host.domain_name }}</div>
+      </div>
+    </div>
+
+    <b>Pages: <span class="badge">{{ pages|length }}</span></b>
+    <ul class="list-group">
+        {% for page in pages %}
+            <li class="list-group-item">
+                <a href="{% url 'page_detail' pk=page.pk %}">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {{ page.address }}
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No pages yet ...</li>
+        {% endfor %}
+    </ul>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#hosts_li").addClass("active");
+  });
+</script>
+{% endblock content %}

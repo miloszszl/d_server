@@ -1,0 +1,33 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Hosts list{% endblock %}
+{% block page_header %}Hosts{% endblock %}
+
+{% block content %}
+
+    <table class="table table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th>ID</th>
+          <th>IPv4</th>
+          <th>Domain</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for host in hosts %}
+        <tr class='clickable-row' data-href="{% url 'host_detail' pk=host.id %}">
+          <td> <a color="black" href="{% url 'host_detail' pk=host.pk %}">{{ host.pk }}</a></td>
+          <td>{{ host.ipv4}}</td>
+          <td>{{ host.domain_name }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#hosts_li").addClass("active");
+  });
+</script>
+{% endblock content %}

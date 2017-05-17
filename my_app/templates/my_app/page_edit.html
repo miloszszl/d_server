@@ -1,0 +1,47 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Page edit{% endblock %}
+{% block page_header %}Page edit{% endblock %}
+
+{% block content %}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-11">PAGE ID : {{ page.id }}</div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" method="POST" >
+            {% csrf_token %}
+            <div class="well">
+                {% if error %}
+                    <div class="alert alert-danger">{{error}}</div>
+                {% endif %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {% if field.errors %}
+                            <div class="alert alert-danger">{{ field.errors }}</div>
+                        {% endif %}
+                        <label class="control-label col-sm-3">{{ field.label_tag }}</label>
+                        <div class="col-sm-7">
+                            {{field}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-sm-1 col-sm-offset-11">
+                    <button type="submit" class="save btn btn-default">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#pages_li").addClass("active");
+  });
+</script>
+{% endblock content %}

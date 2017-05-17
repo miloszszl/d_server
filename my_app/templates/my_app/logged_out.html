@@ -1,0 +1,17 @@
+{% extends 'my_app/base.html' %}
+{% block title %}Logged out{% endblock %}
+{% block page_header %}Logged out{% endblock %}
+
+{%block content %}
+    <div class="jumbotron">
+        {%if not user.is_authenticated%}
+            <h1>You are logged out</h1>
+            <h2>Please log in to use this panel</h2>
+        {% endif %}
+    </div>
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+  });
+</script>
+{% endblock %}

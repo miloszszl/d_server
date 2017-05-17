@@ -1,0 +1,84 @@
+{% extends 'my_app/base.html' %}
+
+{% block title %}Pages list{% endblock %}
+{% block page_header %}
+  <div class="row">
+    <div class="col-sm-11" >Pages</div>
+    <div class="col-sm-1" >
+      <a href="{% url 'page_new' %}" class="btn btn-default">
+        <span class="glyphicon glyphicon-plus" style="color:black"></span>
+      </a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+    <table class="table table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Address</th>
+          <th>Weight</th>
+          <th>Encoding</th>
+          <th>AVG download time [ms]</th>
+          <th>Cookies</th>
+          <!--<th>Force test</th>-->
+        </tr>
+      </thead>
+      <tbody>
+      {% for page in pages %}
+        <tr class='clickable-row' data-href="{% url 'page_detail' pk=page.id %}">
+          <td> <a color="black" href="{% url 'page_detail' pk=page.pk %}">{{ page.address }}</a></td>
+          <td>{{ page.encoding}}</td>
+          <td>{{ page.weight}}</td>
+          <td>{{ page.avg_download_time}}</td>
+          <td>
+            {% if page.cookies_present %}
+              <span class="glyphicon glyphicon-ok text-success"></span>
+            {% else %}
+              <span class="glyphicon glyphicon-remove text-danger"></span>
+            {% endif %}
+          </td>
+
+          <!--<td>-->
+            <!--{% if page.force_test %}-->
+              <!--<span class="glyphicon glyphicon-ok text-success"></span>-->
+            <!--{% else %}-->
+              <!--<span class="glyphicon glyphicon-remove text-danger"></span>-->
+            <!--{% endif %}-->
+          <!--</td>-->
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  <div class="row">
+    <div class="text-center">
+  {% if pages.has_other_pages %}
+    <ul class="pagination">
+      {% if pages.has_previous %}
+        <li><a href="?page_number={{ pages.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in pages.paginator.page_range %}
+        {% if pages.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="?page_number={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if pages.has_next %}
+        <li><a href="?page_number={{ pages.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+      </div>
+  </div>
+<script>
+  jQuery(document).ready(function($) {
+    $(".nav li").removeClass("active");
+    $("#pages_li").addClass("active");
+  });
+</script>
+{% endblock content %}

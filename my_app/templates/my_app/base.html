@@ -1,0 +1,136 @@
+<!DOCTYPE html><!--Background pattern from Subtle Patterns */-->
+{% load staticfiles %}
+<html>
+    <head>
+        <title>
+            {% block title %}Admin home page{% endblock %}
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Inline&amp;subset=latin-ext" rel="stylesheet">
+
+        <style>
+            .clickable-row:hover{
+                cursor: pointer;
+            }
+            .page-header{
+                font-family: 'Bungee Inline', cursive;
+            }
+            input#id_force_test,input#id_cookies_present{
+                width:25px;
+                height:25px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'main_page' %}">Admin Panel</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li id="home_li"><a href="{% url 'main_page' %}">Home</a></li>
+                    <li id="tests_li"><a href="{% url 'tests_list' %}">Tests</a></li>
+                    <li id="pages_li"><a href="{% url 'pages_list' %}">Pages</a></li>
+                    <li id="users_li"><a href="{% url 'users_list' %}">Users</a></li>
+                    <li id="hosts_li"><a href="{% url 'hosts_list' %}">Hosts</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-3" style="margin-top:7px;">
+                <form method="get" action="{% url 'pages_search' %}" accept-charset="utf-8">
+                    <div class="input-group">
+                      <input type="text" class="form-control" name='q' placeholder="Search for...">
+                      <span class="input-group-btn">
+                          <input class="btn btn-secondary" type="submit" value="Submit"/>
+
+                      </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-5">
+            {%if not user.is_authenticated%}
+              <form id="signin" class="navbar-form navbar-right" action="{% url 'main_page' %}" method="POST" role="form">
+                  {% csrf_token %}
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="username" type="text" class="form-control" name="username" value="" placeholder="Login">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">
+                    </div>
+                  <button type="submit" class="btn btn-primary" name="login"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+               </form>
+                {% else %}
+                    <form id="signout" class="navbar-form navbar-right" action="{% url 'main_page' %}" method="POST" role="form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary" name="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</button>
+                    </form>
+                {% endif %}
+            </div>
+      </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+    <div class="page-header">
+        <h2>
+            {% block page_header %}
+                {% if user.is_authenticated %}
+                    WELCOME {{ user.username }}!
+                {% else %}
+                    HOME PAGE
+                {% endif %}
+            {% endblock %}
+        </h2>
+    </div>
+        {% block content %}
+            <div class="jumbotron">
+                {%if not user.is_authenticated%}
+                    <h1>Welcome!</h1>
+                    <h2>Please log in</h2>
+                {% else %}
+                    <h1>Admin panel</h1>
+                    <p>
+                        Manage your tests and inspect results.
+                    </p>
+                {% endif %}
+            </div>
+        {% endblock %}
+    </div>
+    <script>
+        jQuery(document).ready(function($) {
+            $(".clickable-row").click(function() {
+                window.location = $(this).data("href");
+            });
+        });
+
+        jQuery(document).ready(function($) {
+            if(window.location.pathname=="/testing/")
+            {
+                $(".nav li").removeClass("active");
+                $("#home_li").addClass("active");
+            }
+          });
+    </script>
+
+</body>
+</html>
