@@ -25,7 +25,7 @@ SECRET_KEY = 'o2yb%uix2n1_5fup%r+4hu-1td@af^4pf+ew-x0fh@fh5v^85e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['metlando.pythonanywhere.com']
 
 
 # Application definition
