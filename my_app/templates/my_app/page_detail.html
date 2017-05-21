@@ -27,7 +27,7 @@
           <div class="col-sm-2"><b>Weight [kB]:</b></div>
           <div class="col-sm-10">
               {% if page.encoding %}
-                {{ page.encoding}}
+                {{ page.weight}}
               {% else %}
                 None
               {% endif %}
@@ -48,8 +48,10 @@
           <div class="col-sm-10">
               {% if page.cookies_present %}
                   <span class="glyphicon glyphicon-ok text-success"></span>
+              {% elif page.cookies_present == False %}
+                <span class="glyphicon glyphicon-remove text-danger"></span>
               {% else %}
-                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                None
               {% endif %}
           </div>
       </div>
@@ -61,6 +63,14 @@
               {% else %}
                 None
               {% endif %}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2"><b>Domain: </b></div>
+          <div class="col-sm-10">
+                {% if page.host is not None %}
+                    <a href="{% url 'host_detail' pk=page.host.pk %}">{{page.host.domain_name}}</a>
+                {% endif %}<br/>
           </div>
       </div>
       <!--<div class="row">-->
@@ -128,9 +138,9 @@
                 Not tested yet ...<br/><br/>
             {% endif %}
         </div>
-
     </div>
     <br/><br/>
+
     <div class="row">
         <div class="col-sm-6">
             <canvas id="resp_code_chart"></canvas>
@@ -153,9 +163,11 @@
     <b>Buttons: <span class="badge">{{ buttons|length }}</span></b>
 
     <ul class="list-group">
-        <li class="list-group-item">
-            <div class="row"><div class="col-sm-6"><b>Locator:</b></div><div class="col-sm-6"></div></div>
-        </li>
+        {% if buttons %}
+            <li class="list-group-item">
+                <div class="row"><div class="col-sm-6"><b>Locator:</b></div><div class="col-sm-6"></div></div>
+            </li>
+        {% endif %}
         {%for button in buttons%}
             <li class="list-group-item">
                 <a href="{% url 'button_detail' button_pk=button.pk page_pk=page.pk %}">
@@ -184,10 +196,7 @@
                 {% else %}
                   <span class="glyphicon glyphicon-remove text-danger"></span>
                 {% endif %}<br/>
-                <b>Domain: </b>
-                {% if pt.page.host is not None %}
-                    <a href="{% url 'host_detail' pk=pt.page.host.pk %}">{{pt.page.host.domain_name}}</a>
-                {% endif %}<br/>
+
                 <b>Redirection: </b>
                 {% if not pt.redirection or pt.redirection == "" %}
                   <span class="glyphicon glyphicon-remove text-danger"></span>
@@ -196,16 +205,7 @@
                 {% endif %}<br/>
                 <b>Response code: </b>{{pt.response_code}}<br/>
                 <b>Download time[ms]: </b>{{pt.download_time}}<br/>
-                <b>AVG download time[ms]: </b>{{pt.page.avg_download_time}}<br/>
-                <b>Page weight [kB]: </b>{{pt.page.weight}}<br/>
-                <b>Page encoding: </b>{{pt.page.encoding}}<br/>
-                <b>Page cookies: </b>
-                {% if pt.page.cookies_present %}
-                  <span class="glyphicon glyphicon-ok text-success"></span>
-                {% else %}
-                  <span class="glyphicon glyphicon-remove text-danger"></span>
-                {% endif %}<br/>
-
+                <br/>
                 <br/>
                 <b>Buttons:<span class="badge">{{ pt.t_p_b_pt|length }}</span></b>
                     <div class="well">
@@ -317,6 +317,7 @@
         success:function(data){
             if(data!="")
             {
+            console.log(data.intervals_quantity);
                     t_chart(data);
             }
             else

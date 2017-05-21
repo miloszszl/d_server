@@ -33,9 +33,13 @@
         {% for pt in pages_tests%}
             <div class="list-group-item">
                 <b>Tested page: </b>
+                {% if not pt.page or pt.page == "" %}
+                    <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% else %}
                     <a href="{% url 'page_detail' pk=pt.page.pk %}">
                         {{pt.page.address}}
                     </a>
+                {% endif %}
                 <br/>
                 <b>Is working: </b>
                 {% if pt.is_working %}
@@ -61,28 +65,42 @@
                 <b>Page cookies: </b>
                 {% if pt.page.cookies_present %}
                   <span class="glyphicon glyphicon-ok text-success"></span>
-                {% else %}
-                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% elif pt.page.cookies_present == False %}
+                    <span class="glyphicon glyphicon-remove text-danger"></span>
+                {% else%}
+
                 {% endif %}<br/>
 
                 <br/>
-                <b>Buttons:<span class="badge">{{ pt.t_p_b_pt|length }}</span></b>
+                <b>Buttons:
+                    <span class="badge">
+                        {% if pt.t_p_b_pt is not None and pt.page is not None %}
+                            {{ pt.t_p_b_pt|length }}
+                        {% else %}
+                            0
+                        {% endif %}
+                    </span>
+                </b>
                     <div class="well">
                         <ul class="list-group">
-                            {%for t_p_b in pt.t_p_b_pt %}
-                                <li class="list-group-item">
-                                    <a href="{% url 'button_detail' button_pk=t_p_b.button.pk page_pk=pt.page.pk %}">
-                                        {% if t_p_b.is_working %}
-                                          <span class="glyphicon glyphicon-ok text-success"></span>
-                                        {% else %}
-                                          <span class="glyphicon glyphicon-remove text-danger"></span>
-                                        {% endif %}
-                                        {{ t_p_b.button.locator|truncatechars:200 }}
-                                    </a>
-                                </li>
-                            {% empty %}
-                                <li class="list-group-item">No buttons...</li>
-                            {% endfor %}
+                            {% if pt.t_p_b_pt is not None %}
+                                {%for t_p_b in pt.t_p_b_pt %}
+                                    {% if t_p_b is not None and pt.page is not None %}
+                                        <li class="list-group-item">
+                                            <a href="{% url 'button_detail' button_pk=t_p_b.button.pk page_pk=pt.page.pk %}">
+                                                {% if t_p_b.is_working %}
+                                                  <span class="glyphicon glyphicon-ok text-success"></span>
+                                                {% else %}
+                                                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                                                {% endif %}
+                                                {{ t_p_b.button.locator|truncatechars:200 }}
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% empty %}
+                                    <li class="list-group-item">No buttons...</li>
+                                {% endfor %}
+                            {% endif %}
                         </ul>
                     </div>
             </div>

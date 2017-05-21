@@ -21,6 +21,7 @@ from rest_framework import status
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework import generics
+import math
 
 # Create your views here.
 def main_page(request):
@@ -69,7 +70,12 @@ def test_detail(request,pk):
     batches = Batch.objects.filter(test=pk)
     pages_tests=Page_Test.objects.filter(test=pk)
     for pt in pages_tests:
-        pt.t_p_b_pt=T_P_B.objects.filter(page_test=pt.pk)
+        page=pt.page
+        buttons=Button.objects.filter(page=page)
+        if len(buttons)>0:
+            for b in buttons:
+                if b is not None:
+                    pt.t_p_b_pt=T_P_B.objects.filter(page_test=pt.pk,button=b)
 
     return render(request, 'my_app/test_detail.html', {'test': test,'batches':batches,'pages_tests':pages_tests})
 
@@ -99,42 +105,15 @@ def page_detail(request,pk):
             links.append(c.page_2)
 
     buttons = Button.objects.filter(page=pk)
-    # for b in buttons:
-    #     button_tests=T_P_B.objects.filter(button=b.pk)
-    #     correct=0;
-    #     for b_test in button_tests:
-    #         if b_test.is_working==True:
-    #             correct+=1
-    #
-    #     button_working_percentage = None
-    #     b_test_len=len(button_tests)
-    #     if b_test_len>0:
-    #         button_working_percentage=(correct*100.0)/len(button_tests)
-    #
-    #     b.bb=button_working_percentage
 
-    #is working % and redirection %
-    pt=Page_Test.objects.filter(page=pk)
-    tests_quantity=len(pt)
-    # pt_len=len(pt)
-    # if pt_len==0:
-    #     is_working_percentage=None
-    #     redirection_percentage=None
-    # else:
-    #     is_working = 0
-    #     redirections = 0
-    #     for x in pt:
-    #         if x.is_working == True:
-    #             is_working += 1
-    #         if not(x.redirection is None or x.redirection == ""):
-    #             redirections += 1
-    #
-    #     is_working_percentage=(is_working*100.0)/pt_len
-    #     redirection_percentage=(redirections*100.0)/pt_len
+    pages_tests=Page_Test.objects.filter(page=pk)
+    tests_quantity=len(pages_tests)
 
-    pages_tests = Page_Test.objects.filter(page=pk)
+    for b in buttons:
+        b.t_p_b_b = T_P_B.objects.filter(button=b.pk)
+
     for pt in pages_tests:
-        pt.t_p_b_pt = T_P_B.objects.filter(page_test=pt.pk)
+        pt.t_p_b_pt=T_P_B.objects.filter(page_test=pt)
 
     return render(request, 'my_app/page_detail.html', {'page':page,'links':links,'buttons':buttons,     #'is_working_percentage':is_working_percentage,
                                                        'tests_quantity':tests_quantity,                 #'redirection_percentage':redirection_percentage,
@@ -238,9 +217,9 @@ class TimeChartData(APIView):
         quantity=Page_Test.objects.filter(page=pk).count();
         intervals_quantity=0
 
-        if quantity==1:
+        if (pt_max!=None and pt_min!=None) and pt_max['download_time__max'] == pt_min['download_time__min'] or quantity == 1:
             intervals_quantity=1
-        elif quantity == 2 :
+        elif quantity == 2:
             intervals_quantity=2
         elif quantity >= 3 and quantity < 10:
             intervals_quantity=3
@@ -341,28 +320,6 @@ class UserView(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         mac=self.kwargs['mac']
         return User.objects.filter(mac_address=mac)
-
-
-# class UserViewSet(generics.ListCreateAPIView):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-
-
-    # def get_object(self, mac):
-    #     try:
-    #         return User.objects.get(mac_address=mac)
-    #     except User.DoesNotExist:
-    #         raise Http404
-    #
-    # def get(self, request, mac, format=None):
-    #     print(mac)
-    #     user = self.get_object(mac)
-    #     serializer = UserSerializer(user)
-    #     return Response(serializer.data)
-
-    # def get_queryset(self):
-    #     mac=self.kwargs['mac']
-    #     return User.objects.filter(mac_address=mac)
 
 
 class UserViewSet(APIView):

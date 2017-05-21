@@ -23,12 +23,10 @@
                         {% if field.errors %}
                             <div class="alert alert-danger">{{ field.errors }}</div>
                         {% endif %}
-                        {% if field.label != "Avg download time" %}
-                            <label class="control-label col-sm-3">{{ field.label_tag }}</label>
-                            <div class="col-sm-7">
-                                {{field}}
-                            </div>
-                        {% endif %}
+                        <label class="control-label col-sm-3">{{ field.label_tag }}</label>
+                        <div class="col-sm-7">
+                            {{field}}
+                        </div>
                     </div>
                 {% endfor %}
             </div>
