@@ -396,7 +396,9 @@ class UserSerializer(serializers.ModelSerializer):
                                         if len(page) > 0:
                                             Batch.objects.create(test=t_obj, levels=b_data.get('levels',None), page=page[0])
                                         else:
-                                            Batch.objects.create(test=t_obj, levels=b_data.get('levels',None))
+                                            p1=Page.objects.create(address=addr)
+                                            p1.save()
+                                            Batch.objects.create(test=t_obj, levels=b_data.get('levels',None),page=p1)
 
         return user
 
