@@ -324,7 +324,7 @@ class UserView(viewsets.ReadOnlyModelViewSet):
 
 class UserViewSet(APIView):
     # http_method_names = ['post',]
-    @method_decorator(csrf_exempt)
+    
     def post(self, request, format=None):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
