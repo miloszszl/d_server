@@ -4,6 +4,11 @@ from django.db.models import Max,Min,Sum
 import copy
 from datetime import datetime, timedelta
 from django.db.models import Q
+import hashlib
+
+class SecretSerializer(serializers.Serializer):
+    key = serializers.CharField(max_length=64)   #hashlib.sha224(b"Nobody inspects the spammish repetition").hexdigest()
+
 
 class Page_HostSerializer(serializers.ModelSerializer):
 
@@ -78,13 +83,32 @@ class TestSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     tests=TestSerializer(source='test_u',many=True,required=False,allow_null=True)
+    secret =SecretSerializer(allow_null=True,required=False,)
 
     class Meta:
         model=User
-        fields=('ipv4', 'transfer_speed', 'mac_address', 'tests')
+        fields=('secret','ipv4', 'transfer_speed', 'mac_address', 'tests',)
 
     def create(self, validated_data):
         tests_list = validated_data.pop('tests', None)
+        secret=validated_data.pop('secret',None)
+        if secret is None:
+            return None
+        else:
+            key_from_user=secret.get('key',None)
+            if key_from_user is None:
+                return None
+            else:
+                mac_address = validated_data.get('mac_address', None)
+                ipv4 = validated_data.get('ipv4', None)
+                if mac_address is None or ipv4 is None:
+                    return None
+                else:
+                    secret_key=mac_address+"trochegruzu*74"+ipv4+"posolecietroche@11"
+                    my_bytes = bytes(secret_key, encoding='utf-8')
+                    code = hashlib.sha256(my_bytes).hexdigest()
+                    if code != key_from_user:
+                        return None
 
         user = User.objects.filter(mac_address=validated_data.get('mac_address',None), ipv4=validated_data.get('ipv4',None),
                                 transfer_speed=validated_data.get('transfer_speed',None))
@@ -396,9 +420,9 @@ class UserSerializer(serializers.ModelSerializer):
                                         if len(page) > 0:
                                             Batch.objects.create(test=t_obj, levels=b_data.get('levels',None), page=page[0])
                                         else:
-                                            p1=Page.objects.create(address=addr)
+                                            p1 = Page.objects.create(address=addr)
                                             p1.save()
-                                            Batch.objects.create(test=t_obj, levels=b_data.get('levels',None),page=p1)
+                                            Batch.objects.create(test=t_obj, levels=b_data.get('levels', None), page=p1)
 
         return user
 

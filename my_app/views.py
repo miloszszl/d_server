@@ -22,7 +22,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework import generics
 import math
-from django.views.decorators.csrf import csrf_exempt
+
 # Create your views here.
 def main_page(request):
     if request.method == "POST":
@@ -324,17 +324,20 @@ class UserView(viewsets.ReadOnlyModelViewSet):
 
 class UserViewSet(APIView):
     # http_method_names = ['post',]
-    @method_decorator(csrf_exempt)
     def post(self, request, format=None):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             x = serializer.create(request.data)
+            if x is None:
+                return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
             serializer.save()
             return Response({"answer":"ok"},status=status.HTTP_201_CREATED)#{"answer":"ok"}   x for test purposes
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, format=None):
         snippets = User.objects.all()
+        for x in snippets:
+            x.secret={"key":"hidden"}
         serializer = UserSerializer(snippets, many=True)
         return Response(serializer.data)
 
