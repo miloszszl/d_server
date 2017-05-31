@@ -190,6 +190,7 @@
     <div class="list-group">
         {% for pt in pages_tests%}
             <div class="list-group-item">
+                <b>Test ID: </b><a href="{% url 'test_detail' pk=pt.test.id %}">{{ pt.test.pk }}</a><br/>
                 <b>Is working: </b>
                 {% if pt.is_working %}
                   <span class="glyphicon glyphicon-ok text-success"></span>

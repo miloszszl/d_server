@@ -73,9 +73,7 @@ def test_detail(request,pk):
         page=pt.page
         buttons=Button.objects.filter(page=page)
         if len(buttons)>0:
-            for b in buttons:
-                if b is not None:
-                    pt.t_p_b_pt=T_P_B.objects.filter(page_test=pt.pk,button=b)
+            pt.t_p_b_pt=T_P_B.objects.filter(page_test=pt.pk,button__in=buttons)
 
     return render(request, 'my_app/test_detail.html', {'test': test,'batches':batches,'pages_tests':pages_tests})
 
