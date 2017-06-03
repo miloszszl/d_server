@@ -42,6 +42,8 @@ def main_page(request):
 @login_required
 def users_list(request):
     users = User.objects.all().order_by('id')
+    for u in users:
+        u.how_many=u.test_u.all().count()
     return render(request, 'my_app/users_list.html', {'users':users})
 
 @login_required

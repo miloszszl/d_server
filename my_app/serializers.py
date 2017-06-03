@@ -136,7 +136,7 @@ class UserSerializer(serializers.ModelSerializer):
                                     host_data=page_data.pop('host', None)
 
                                     if host_data is not None:
-                                        ph_obj=Page_Host.objects.filter(domain_name=host_data.get('domain_name',None), ipv4=host_data.get('ipv4',None))
+                                        ph_obj=Page_Host.objects.filter(domain_name=host_data.get('domain_name',None))#, ipv4=host_data.get('ipv4',None)
 
                                         if len(ph_obj) <= 0:
                                             ph_obj=Page_Host.objects.create(**host_data)
