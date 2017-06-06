@@ -178,7 +178,7 @@ class UserSerializer(serializers.ModelSerializer):
                                     pt_obj.save()
 
                                     #global_working_percentage
-                                    total_pt1=Page_Test.objects.filter(page=p_obj).count()
+                                    total_pt1=Page_Test.objects.filter(~Q(is_working=None),page=p_obj).count()
                                     global_working_percentage_pt=None
                                     if total_pt1 > 0:
                                         working_pt1=Page_Test.objects.filter(page=p_obj,is_working=True).count()
@@ -195,17 +195,17 @@ class UserSerializer(serializers.ModelSerializer):
 
                                     #redirection percentage
                                     not_null_redir = Page_Test.objects.filter(~Q(redirection=None),page=p_obj).count()
+                                    total_pt3=Page_Test.objects.filter(page=p_obj).count()
                                     redir_percentage = None
-                                    if total_pt1>0:
-                                        redir_percentage=not_null_redir/total_pt1*100.0
+                                    if total_pt3>0:
+                                        redir_percentage=not_null_redir/total_pt3*100.0
 
                                     #avg_download time
-                                    time_sum = Page_Test.objects.filter(page=p_obj, download_time__gte=0).aggregate(
-                                        time=Sum('download_time'))
-                                    pt_count = Page_Test.objects.filter(page=p_obj, download_time__gte=0).count()
-                                    avg_download_time = None
-                                    if time_sum.get('time', None) is not None and len(time_sum) > 0 and pt_count > 0:
-                                        avg_download_time = time_sum.get('time', None) / pt_count
+                                    time_sum=Page_Test.objects.filter(page=p_obj,download_time__gte=0).aggregate(time=Sum('download_time'))
+                                    pt_count=Page_Test.objects.filter(page=p_obj,download_time__gte=0).count()
+                                    avg_download_time=None
+                                    if time_sum.get('time',None) is not None and len(time_sum)>0 and pt_count>0:
+                                        avg_download_time=time_sum.get('time',None)/pt_count
 
                                     p_obj.last_month_working_percentage=last_month_working_percentage_pt
                                     p_obj.global_working_percentage=global_working_percentage_pt
