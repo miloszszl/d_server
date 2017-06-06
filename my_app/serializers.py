@@ -200,10 +200,12 @@ class UserSerializer(serializers.ModelSerializer):
                                         redir_percentage=not_null_redir/total_pt1*100.0
 
                                     #avg_download time
-                                    time_sum=Page_Test.objects.filter(page=p_obj,download_time__gte=0).aggregate(time=Sum('download_time'))
-                                    avg_download_time=None
-                                    if time_sum.get('time',None) is not None and len(time_sum)>0:
-                                        avg_download_time=time_sum.get('time',None)/total_pt1
+                                    time_sum = Page_Test.objects.filter(page=p_obj, download_time__gte=0).aggregate(
+                                        time=Sum('download_time'))
+                                    pt_count = Page_Test.objects.filter(page=p_obj, download_time__gte=0).count()
+                                    avg_download_time = None
+                                    if time_sum.get('time', None) is not None and len(time_sum) > 0 and pt_count > 0:
+                                        avg_download_time = time_sum.get('time', None) / pt_count
 
                                     p_obj.last_month_working_percentage=last_month_working_percentage_pt
                                     p_obj.global_working_percentage=global_working_percentage_pt

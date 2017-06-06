@@ -27,8 +27,8 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="176" column="66" lean-forward="false" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
+            <state relative-caret-position="525">
+              <caret line="205" column="60" lean-forward="true" selection-start-line="205" selection-start-column="60" selection-end-line="205" selection-end-column="60" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -739,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="176" column="66" lean-forward="false" selection-start-line="176" selection-start-column="66" selection-end-line="176" selection-end-column="66" />
+        <state relative-caret-position="525">
+          <caret line="205" column="60" lean-forward="true" selection-start-line="205" selection-start-column="60" selection-end-line="205" selection-end-column="60" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
