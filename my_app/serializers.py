@@ -173,6 +173,8 @@ class UserSerializer(serializers.ModelSerializer):
                                         p_obj.save()
 
                                     pt_obj.page=p_obj
+                                    if pt_obj.download_time == 0:
+                                        pt_obj.download_time=None;
                                     pt_obj.save()
 
                                     #global_working_percentage
