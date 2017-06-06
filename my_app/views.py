@@ -81,7 +81,7 @@ def test_detail(request,pk):
 
 @login_required
 def pages_list(request):
-    pages=Page.objects.all().order_by('address')
+    pages = Page.objects.filter(~Q(avg_download_time=None)).order_by('address')
     page_number = request.GET.get('page_number', 1)
     paginator = Paginator(pages, 15)
     try:
