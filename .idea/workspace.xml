@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e49753-a823-490d-b9e3-7be785949901" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/serializers.py" afterPath="$PROJECT_DIR$/my_app/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/views.py" afterPath="$PROJECT_DIR$/my_app/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+            <state relative-caret-position="472">
+              <caret line="446" column="18" lean-forward="false" selection-start-line="446" selection-start-column="18" selection-end-line="446" selection-end-column="18" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -30,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/host_detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
-              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+              <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -39,18 +40,18 @@
       <file leaf-file-name="pages_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
+            <state relative-caret-position="1785">
               <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="83" column="79" lean-forward="false" selection-start-line="83" selection-start-column="79" selection-end-line="83" selection-end-column="79" />
+            <state relative-caret-position="385">
+              <caret line="323" column="0" lean-forward="true" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -58,10 +59,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/python36/Lib/urllib/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="users_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/users_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
+            <state relative-caret-position="441">
               <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
               <folding />
             </state>
@@ -81,7 +92,7 @@
       <file leaf-file-name="page_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
+            <state relative-caret-position="7581">
               <caret line="361" column="22" lean-forward="false" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
               <folding />
             </state>
@@ -93,16 +104,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1932">
               <caret line="92" column="58" lean-forward="false" selection-start-line="92" selection-start-column="58" selection-end-line="92" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_app/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,20 +138,20 @@
       <list>
         <option value="$PROJECT_DIR$/http_site/settings.py" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" />
-        <option value="$PROJECT_DIR$/my_app/views.py" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/users_list.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/pages_list.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/user_detail.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/host_detail.html" />
         <option value="$PROJECT_DIR$/my_app/serializers.py" />
+        <option value="$PROJECT_DIR$/my_app/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1932" />
+    <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
@@ -168,8 +169,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,19 +266,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1932" height="1048" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2974138" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27228788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -296,14 +297,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/test_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1932">
-          <caret line="92" column="58" lean-forward="false" selection-start-line="92" selection-start-column="58" selection-end-line="92" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -336,7 +329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -398,7 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -460,7 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -514,7 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -568,7 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -660,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2898">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,19 +674,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="83" column="79" lean-forward="false" selection-start-line="83" selection-start-column="79" selection-end-line="83" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/users_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
+        <state relative-caret-position="441">
           <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding />
         </state>
@@ -710,7 +684,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="7581">
           <caret line="361" column="22" lean-forward="false" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
           <folding />
         </state>
@@ -718,7 +692,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="1785">
           <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
           <folding />
         </state>
@@ -735,17 +709,35 @@
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/host_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+        <state relative-caret-position="472">
+          <caret line="446" column="18" lean-forward="false" selection-start-line="446" selection-start-column="18" selection-end-line="446" selection-end-column="18" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/python36/Lib/urllib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="323" column="0" lean-forward="true" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
           </folding>
         </state>
       </provider>

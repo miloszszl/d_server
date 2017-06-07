@@ -22,6 +22,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework import generics
 import math
+import urllib
 
 # Create your views here.
 def main_page(request):
@@ -310,7 +311,7 @@ class PageForClientView(viewsets.ReadOnlyModelViewSet):
     serializer_class = Page_For_ClientSerializer
 
     def get_queryset(self):
-        addr=self.kwargs['addr']
+        addr=urllib.unquote(self.kwargs['addr'])
         return Page.objects.filter(address=addr)
 
 
