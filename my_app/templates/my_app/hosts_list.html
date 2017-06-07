@@ -9,7 +9,7 @@
       <thead class="thead-inverse">
         <tr>
           <th>ID</th>
-          <th>IPv4</th>
+          <!--<th>IPv4</th>-->
           <th>Domain</th>
         </tr>
       </thead>
@@ -17,7 +17,7 @@
       {% for host in hosts %}
         <tr class='clickable-row' data-href="{% url 'host_detail' pk=host.id %}">
           <td> <a color="black" href="{% url 'host_detail' pk=host.pk %}">{{ host.pk }}</a></td>
-          <td>{{ host.ipv4}}</td>
+          <!--<td>{{ host.ipv4}}</td>-->
           <td>{{ host.domain_name }}</td>
         </tr>
       {% endfor %}
