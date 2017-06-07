@@ -28,8 +28,8 @@
       {% for page in pages %}
         <tr class='clickable-row' data-href="{% url 'page_detail' pk=page.id %}">
           <td> <a color="black" href="{% url 'page_detail' pk=page.pk %}">{{ page.address }}</a></td>
-          <td>{{ page.encoding}}</td>
           <td>{{ page.weight}}</td>
+          <td>{{ page.encoding}}</td>
           <td>{{ page.avg_download_time}}</td>
           <td>
             {% if page.cookies_present %}
