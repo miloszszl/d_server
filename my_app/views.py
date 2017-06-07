@@ -311,8 +311,7 @@ class PageForClientView(viewsets.ReadOnlyModelViewSet):
     serializer_class = Page_For_ClientSerializer
 
     def get_queryset(self):
-        str=self.kwargs['addr']
-        addr=urllib.parse.unquote(str)
+        adr=self.kwargs['addr'].replace('|','/').replace('^','.')
         return Page.objects.filter(address=addr)
 
 
