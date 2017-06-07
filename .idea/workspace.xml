@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e49753-a823-490d-b9e3-7be785949901" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/serializers.py" afterPath="$PROJECT_DIR$/my_app/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/templates/my_app/host_detail.html" afterPath="$PROJECT_DIR$/my_app/templates/my_app/host_detail.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,24 +14,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http_site/settings.py">
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2898">
-              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="591">
+              <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
+      <file leaf-file-name="host_detail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/host_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="149" column="97" lean-forward="true" selection-start-line="149" selection-start-column="97" selection-end-line="149" selection-end-column="97" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="168">
+              <caret line="8" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,6 +143,7 @@
         <option value="$PROJECT_DIR$/my_app/templates/my_app/pages_list.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/user_detail.html" />
         <option value="$PROJECT_DIR$/my_app/serializers.py" />
+        <option value="$PROJECT_DIR$/my_app/templates/my_app/host_detail.html" />
       </list>
     </option>
   </component>
@@ -295,14 +296,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7287">
-          <caret line="347" column="37" lean-forward="false" selection-start-line="347" selection-start-column="37" selection-end-line="347" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/test_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1932">
@@ -741,11 +734,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="149" column="97" lean-forward="true" selection-start-line="149" selection-start-column="97" selection-end-line="149" selection-end-column="97" />
+        <state relative-caret-position="591">
+          <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/host_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
