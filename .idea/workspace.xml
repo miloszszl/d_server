@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e49753-a823-490d-b9e3-7be785949901" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" afterPath="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" afterPath="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/templates/my_app/pages_list.html" afterPath="$PROJECT_DIR$/my_app/templates/my_app/pages_list.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages_list.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pages_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
+            <state relative-caret-position="738">
+              <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -103,18 +104,18 @@
       <file leaf-file-name="page_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7581">
-              <caret line="361" column="22" lean-forward="false" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
+            <state relative-caret-position="468">
+              <caret line="341" column="11" lean-forward="true" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/test_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="65" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="116" selection-end-column="22" />
+            <state relative-caret-position="302">
+              <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -138,14 +139,14 @@
       <list>
         <option value="$PROJECT_DIR$/http_site/settings.py" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/users_list.html" />
-        <option value="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" />
-        <option value="$PROJECT_DIR$/my_app/templates/my_app/pages_list.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/user_detail.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/host_detail.html" />
         <option value="$PROJECT_DIR$/my_app/serializers.py" />
         <option value="$PROJECT_DIR$/my_app/urls.py" />
         <option value="$PROJECT_DIR$/my_app/views.py" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" />
+        <option value="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" />
+        <option value="$PROJECT_DIR$/my_app/templates/my_app/pages_list.html" />
       </list>
     </option>
   </component>
@@ -644,14 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7581">
-          <caret line="361" column="22" lean-forward="false" selection-start-line="361" selection-start-column="22" selection-end-line="361" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/host_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -698,14 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/user_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
@@ -716,8 +701,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/test_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="65" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="116" selection-end-column="22" />
+        <state relative-caret-position="302">
+          <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="341" column="11" lean-forward="true" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
           <folding />
         </state>
       </provider>
