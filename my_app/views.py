@@ -312,7 +312,7 @@ class PageForClientView(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         str=self.kwargs['addr']
-        return str
+        #return str
         addr=urllib.parse.unquote("http%3A%2F%2Fwww.google.pl")
         return Page.objects.filter(address=addr)
 
