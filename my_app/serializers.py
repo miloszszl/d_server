@@ -51,7 +51,7 @@ class PageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Page
-        fields=('address','weight','encoding','cookies_present', 'force_test','weight_w_pictures','host','page_connections','buttons')
+        fields=('address','weight','encoding','cookies_present', 'force_test','weight_w_pictures','host','page_connections','buttons','pictures_amount')
 
 
 class Page_TestSerializer(serializers.ModelSerializer):
@@ -78,7 +78,8 @@ class TestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Test
-        fields=('date','batch','pages_tests')
+        fields=('date','batch','pages_tests','total_time','total_weight','total_weight_w_pictures','tested_pages_amount',
+                'tested_buttons_amount','total_pictures_amount')
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -132,10 +133,14 @@ class UserSerializer(serializers.ModelSerializer):
                                 redirection_data=pt_data.pop('redirection', None)
 
                                 pt_obj = Page_Test.objects.create(test=t_obj, redirection=None, **pt_data)
-                                if page_data is not None:
+                                if page_data is not None and page_data.get('domain_name',None) is not None and\
+                                        page_data.get('domain_name',None)!="":
                                     host_data=page_data.pop('host', None)
 
-                                    if host_data is not None:
+                                    ph_obj=None
+
+                                    if host_data is not None and host_data.get('domain_name',None) is not None and\
+                                        host_data.get('domain_name',None)!="":
                                         ph_obj=Page_Host.objects.filter(domain_name=host_data.get('domain_name',None))#, ipv4=host_data.get('ipv4',None)
 
                                         if len(ph_obj) <= 0:

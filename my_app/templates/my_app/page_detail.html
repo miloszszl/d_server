@@ -14,53 +14,63 @@
     </div>
   <div class="panel-body">
       <div class="row">
-          <div class="col-sm-2"><b>Page address</b></div>
-          <div class="col-sm-10">
+          <div class="col-sm-3"><b>Page address</b></div>
+          <div class="col-sm-9">
               {% if page.address %}
                 {{page.address}}
               {% else %}
-                None
+                Not tested ...
               {% endif %}
           </div>
       </div>
       <div class="row">
-          <div class="col-sm-2"><b>Weight [kB]:</b></div>
-          <div class="col-sm-10">
+          <div class="col-sm-3"><b>Weight [kB]:</b></div>
+          <div class="col-sm-9">
               {% if page.weight %}
                 {{ page.weight}}
               {% else %}
-                None
+                Not tested ...
               {% endif %}
           </div>
       </div>
       <div class="row">
-          <div class="col-sm-2"><b>Cookies:</b></div>
-          <div class="col-sm-10">
+          <div class="col-sm-3"><b>Cookies:</b></div>
+          <div class="col-sm-9">
               {% if page.cookies_present %}
                   <span class="glyphicon glyphicon-ok text-success"></span>
               {% elif page.cookies_present == False %}
                 <span class="glyphicon glyphicon-remove text-danger"></span>
               {% else %}
-                None
+                Not tested ...
               {% endif %}
           </div>
       </div>
       <div class="row">
-          <div class="col-sm-2"><b>AVG download time[ms]:</b></div>
-          <div class="col-sm-10">
+          <div class="col-sm-3"><b>AVG download time[ms]:</b></div>
+          <div class="col-sm-9">
               {% if page.avg_download_time %}
                 {{ page.avg_download_time}}
               {% else %}
-                None
+                Not tested ...
               {% endif %}
           </div>
       </div>
       <div class="row">
-          <div class="col-sm-2"><b>Domain: </b></div>
-          <div class="col-sm-10">
+          <div class="col-sm-3"><b>Domain: </b></div>
+          <div class="col-sm-9">
                 {% if page.host is not None %}
                     <a href="{% url 'host_detail' pk=page.host.pk %}">{{page.host.domain_name}}</a>
                 {% endif %}<br/>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-3"><b>Pictures amount: </b></div>
+          <div class="col-sm-9">
+              {% if page.pictures_amount %}
+                {{page.pictures_amount}}
+              {% else %}
+                Not tested ...
+              {% endif %}
           </div>
       </div>
       <!--<div class="row">-->
@@ -95,7 +105,7 @@
                 </div>
             </div>
             {% else %}
-                Not tested yet ...<br/><br/>
+                Not tested ...<br/><br/>
             {% endif %}
         </div>
     </div>
@@ -110,7 +120,7 @@
                 </div>
             </div>
             {% else %}
-                Not tested yet ...<br/><br/>
+                Not tested ...<br/><br/>
             {% endif %}
         </div>
     </div>
@@ -125,7 +135,7 @@
                 </div>
             </div>
             {% else %}
-                Not tested yet ...<br/><br/>
+                Not tested ...<br/><br/>
             {% endif %}
         </div>
     </div>

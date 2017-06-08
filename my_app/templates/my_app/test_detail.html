@@ -4,11 +4,72 @@
 {% block page_header %}Test details{% endblock %}
 
 {% block content %}
-
     <div class="panel panel-primary">
       <div class="panel-heading">TEST ID : {{ test.pk }}</div>
       <div class="panel-body">
-          <div class="col-sm-1"><b>Date:</b></div><div class="col-sm-11">{{ test.date }}</div>
+          <div class="row">
+            <div class="col-sm-3"><b>Date:</b></div><div class="col-sm-9">{{ test.date }}</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"><b>Total test time:</b></div>
+              <div class="col-sm-9">
+                  {% if page.total_time is not None %}
+                    {{ test.total_time }}
+                  {% else %}
+                    Not tested ...
+                  {% endif %}
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"><b>Total pages weight[MB]:</b></div>
+              <div class="col-sm-9">
+                  {% if page.total_weight is not None %}
+                    {{ test.total_weight }}
+                  {% else %}
+                    Not tested ...
+                  {% endif %}
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"><b>Total pages weight with pictures[MB]:</b></div>
+              <div class="col-sm-9">
+                  {% if page.total_weight_w_pictures is not None %}
+                    {{ test.total_weight_w_pictures }}
+                  {% else %}
+                    Not tested ...
+                  {% endif %}
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"><b>Tested pages amount :</b></div>
+              <div class="col-sm-9">
+                  {% if page.tested_pages_amount is not None %}
+                    {{ test.tested_pages_amount }}
+                  {% else %}
+                    Not tested ...
+                  {% endif %}
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"><b>Tested buttons amount:</b></div>
+              <div class="col-sm-9">
+                  {% if page.tested_buttons_amount is not None %}
+                    {{ test.tested_buttons_amount }}
+                  {% else %}
+                    Not tested ...
+                  {% endif %}
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3"><b>Total pictures amount:</b></div>
+              <div class="col-sm-9">
+                  {% if page.total_pictures_amount is not None %}
+                    {{ test.total_pictures_amount }}
+                  {% else %}
+                    Not tested ...
+                  {% endif %}
+              </div>
+          </div>
       </div>
     </div>
 
@@ -27,6 +88,7 @@
             <div class="list-group-item">No input ...</div>
         {% endfor %}
     </div>
+
     {% if batches %}
     <b>Details:</b><br/>
     <div class="list-group">

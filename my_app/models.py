@@ -17,6 +17,12 @@ class User(models.Model):
 class Test(models.Model):
     user=models.ForeignKey('User', related_name='test_u',null=True,blank=True)
     date=models.DateTimeField(default=timezone.now,null=True,blank=True)
+    total_time=models.BigIntegerField(null=True,blank=True) #in seconds
+    total_weight=models.BigIntegerField(null=True,blank=True) #in kB
+    total_weight_w_pictures=models.BigIntegerField(null=True,blank=True) #in MB
+    tested_pages_amount=models.BigIntegerField(null=True,blank=True)
+    tested_buttons_amount=models.BigIntegerField(null=True,blank=True)
+    total_pictures_amount=models.BigIntegerField(null=True,blank=True)
 
     class Meta:
         db_table='Tests'
@@ -86,9 +92,7 @@ class Page(models.Model):
     last_month_working_percentage=models.DecimalField(max_digits=5,decimal_places=2,null=True,blank=True)
     redirection_percentage=models.DecimalField(max_digits=5,decimal_places=2,null=True,blank=True)
     host = models.ForeignKey('Page_Host',related_name='page_h',null=True,blank=True)
-
-    # def __str__(self):
-    #     return self.date
+    pictures_amount=models.IntegerField(null=True,blank=True)
 
     class Meta:
         db_table='Pages'
