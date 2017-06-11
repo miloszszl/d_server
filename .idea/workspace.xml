@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e49753-a823-490d-b9e3-7be785949901" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/urls.py" afterPath="$PROJECT_DIR$/my_app/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/views.py" afterPath="$PROJECT_DIR$/my_app/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="317" column="77" lean-forward="false" selection-start-line="317" selection-start-column="77" selection-end-line="317" selection-end-column="77" />
+            <state relative-caret-position="520">
+              <caret line="317" column="66" lean-forward="false" selection-start-line="317" selection-start-column="66" selection-end-line="317" selection-end-column="66" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -66,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="60" lean-forward="true" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="77" />
+            <state relative-caret-position="95">
+              <caret line="18" column="123" lean-forward="false" selection-start-line="18" selection-start-column="123" selection-end-line="18" selection-end-column="123" />
               <folding />
             </state>
           </provider>
@@ -112,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="648">
-              <caret line="105" column="21" lean-forward="true" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
+              <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -154,10 +155,10 @@
         <option value="$PROJECT_DIR$/my_app/templates/my_app/users_list.html" />
         <option value="$PROJECT_DIR$/my_app/forms.py" />
         <option value="$PROJECT_DIR$/my_app/models.py" />
-        <option value="$PROJECT_DIR$/my_app/urls.py" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" />
         <option value="$PROJECT_DIR$/my_app/serializers.py" />
         <option value="$PROJECT_DIR$/my_app/views.py" />
+        <option value="$PROJECT_DIR$/my_app/urls.py" />
       </list>
     </option>
   </component>
@@ -265,7 +266,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../projekt_zesp2/Rozproszone-testowanie-aplikacji-HTTP/django_app" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -687,18 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="60" lean-forward="true" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
-          <caret line="105" column="21" lean-forward="true" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
+          <caret line="105" column="21" lean-forward="false" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="21" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -707,11 +700,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="317" column="77" lean-forward="false" selection-start-line="317" selection-start-column="77" selection-end-line="317" selection-end-column="77" />
+        <state relative-caret-position="520">
+          <caret line="317" column="66" lean-forward="false" selection-start-line="317" selection-start-column="66" selection-end-line="317" selection-end-column="66" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="18" column="123" lean-forward="false" selection-start-line="18" selection-start-column="123" selection-end-line="18" selection-end-column="123" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -16,7 +16,7 @@ router.register(r'hosts', views.PHVS)
 router.register(r'pt', views.PTVS)
 router.register(r't', views.TVS)
 router.register(r'u', views.UVS)
-router.register(r'page_for_client/(?P<addr>[\w\-]+)', views.PageForClientView,base_name='page_for_client_view')
+router.register(r'page_for_client/(?P<addr>[A-Za-z0-9\-\_:|^]+)', views.PageForClientView,base_name='page_for_client_view')
 router.register(r'users/(?P<mac>[\w\-]+)', views.UserView,base_name='user_view')    #get only
 
 urlpatterns = format_suffix_patterns(router.get_urls(), allowed=['json', 'html'])
