@@ -154,7 +154,7 @@
     <b>Connections: <span class="badge">{{ links|length }}</span></b>
     <ul class="list-group">
         {%for link in links%}
-            <li class="list-group-item"><a href="{% url 'page_detail' pk=link.id %}">{{ link.address|slice:":255" }}</a></li>
+            <li class="list-group-item" style="word-wrap: break-word;"><a href="{% url 'page_detail' pk=link.id %}">{{ link.address|truncatechars:100 }}</a></li>
         {% empty %}
             <li class="list-group-item">No connections yet...</li>
         {% endfor %}
@@ -172,7 +172,7 @@
             <li class="list-group-item">
                 <a href="{% url 'button_detail' button_pk=button.pk page_pk=page.pk %}">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="word-wrap: break-word;">
                             {{ button.locator|truncatechars:80}}
                         </div>
 
