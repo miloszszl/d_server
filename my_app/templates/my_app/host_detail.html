@@ -9,7 +9,7 @@
       <div class="panel-heading">HOST ID : {{host.pk}}</div>
       <div class="panel-body">
           <!--<div class="col-sm-2"><b>IPv4:</b></div><div class="col-sm-10">{{ host.ipv4}}</div>-->
-          <div class="col-sm-2"><b>Domain:</b></div><div class="col-sm-10">{{ host.domain_name }}</div>
+          <div class="col-sm-2"><b>Domain:</b></div><div class="col-sm-10">{{ host.domain_name|slice:":255" }}</div>
       </div>
     </div>
 
@@ -20,7 +20,7 @@
                 <a href="{% url 'page_detail' pk=page.pk %}">
                     <div class="row">
                         <div class="col-sm-12">
-                            {{ page.address }}
+                            {{ page.address|slice:":255" }}
                         </div>
                     </div>
                 </a>

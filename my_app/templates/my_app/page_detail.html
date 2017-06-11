@@ -17,7 +17,7 @@
           <div class="col-sm-3"><b>Page address</b></div>
           <div class="col-sm-9">
               {% if page.address %}
-                {{page.address}}
+                {{page.address|slice:":255"}}
               {% else %}
                 Not tested ...
               {% endif %}
@@ -59,7 +59,7 @@
           <div class="col-sm-3"><b>Domain: </b></div>
           <div class="col-sm-9">
                 {% if page.host is not None %}
-                    <a href="{% url 'host_detail' pk=page.host.pk %}">{{page.host.domain_name}}</a>
+                    <a href="{% url 'host_detail' pk=page.host.pk %}">{{page.host.domain_name|slice:":255"}}</a>
                 {% endif %}<br/>
           </div>
       </div>
@@ -154,7 +154,7 @@
     <b>Connections: <span class="badge">{{ links|length }}</span></b>
     <ul class="list-group">
         {%for link in links%}
-            <li class="list-group-item"><a href="{% url 'page_detail' pk=link.id %}">{{ link.address }}</a></li>
+            <li class="list-group-item"><a href="{% url 'page_detail' pk=link.id %}">{{ link.address|slice:":255" }}</a></li>
         {% empty %}
             <li class="list-group-item">No connections yet...</li>
         {% endfor %}
