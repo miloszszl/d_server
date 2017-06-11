@@ -70,6 +70,7 @@ def tests_list(request):
 @login_required
 def test_detail(request,pk):
     test = get_object_or_404(Test, pk=pk)
+    m,s=divmod(test.total_time,60)
     batches = Batch.objects.filter(test=pk)
     pages_tests=Page_Test.objects.filter(test=pk)
     for pt in pages_tests:
@@ -78,7 +79,7 @@ def test_detail(request,pk):
         if len(buttons)>0:
             pt.t_p_b_pt=T_P_B.objects.filter(page_test=pt.pk,button__in=buttons)
 
-    return render(request, 'my_app/test_detail.html', {'test': test,'batches':batches,'pages_tests':pages_tests})
+    return render(request, 'my_app/test_detail.html', {'minutes':m,'seconds':s,'test': test,'batches':batches,'pages_tests':pages_tests})
 
 @login_required
 def pages_list(request):
