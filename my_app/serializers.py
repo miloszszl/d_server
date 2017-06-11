@@ -81,7 +81,6 @@ class TestSerializer(serializers.ModelSerializer):
         fields=('date','batch','pages_tests','total_time','total_weight','total_weight_w_pictures','tested_pages_amount',
                 'tested_buttons_amount','total_pictures_amount')
 
-
 class UserSerializer(serializers.ModelSerializer):
     tests=TestSerializer(source='test_u',many=True,required=False,allow_null=True)
     secret =SecretSerializer(allow_null=True,required=False,)
