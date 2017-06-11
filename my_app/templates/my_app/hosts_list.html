@@ -18,7 +18,7 @@
         <tr class='clickable-row' data-href="{% url 'host_detail' pk=host.id %}">
           <td> <a color="black" href="{% url 'host_detail' pk=host.pk %}">{{ host.pk }}</a></td>
           <!--<td>{{ host.ipv4}}</td>-->
-          <td>{{ host.domain_name|slice:":255" }}</td>
+          <td style="word-wrap: break-word;">{{ host.domain_name|truncatechars:100 }}</td>
         </tr>
       {% endfor %}
       </tbody>

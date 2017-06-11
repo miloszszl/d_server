@@ -93,13 +93,13 @@
     <b>Details:</b><br/>
     <div class="list-group">
         {% for pt in pages_tests%}
-            <div class="list-group-item">
+            <div class="list-group-item" style="word-wrap: break-word;">
                 <b>Tested page: </b>
                 {% if not pt.page or pt.page == "" %}
                     <span class="glyphicon glyphicon-remove text-danger"></span>
                 {% else %}
                     <a href="{% url 'page_detail' pk=pt.page.pk %}">
-                        {{pt.page.address|slice:":255"}}
+                        {{pt.page.address|truncatechars:100}}
                     </a>
                 {% endif %}
                 <br/>
