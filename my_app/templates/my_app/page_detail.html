@@ -17,7 +17,7 @@
           <div class="col-sm-3"><b>Page address</b></div>
           <div class="col-sm-9" style="word-wrap: break-word;">
               {% if page.address %}
-                {{page.address|truncatechars:100}}
+                {{page.address}
               {% else %}
                 Not tested ...
               {% endif %}
@@ -59,7 +59,7 @@
           <div class="col-sm-3"><b>Domain: </b></div>
           <div class="col-sm-9" style="word-wrap: break-word;">
                 {% if page.host is not None %}
-                    <a href="{% url 'host_detail' pk=page.host.pk %}">{{page.host.domain_name|truncatechars:100}}</a>
+                    <a href="{% url 'host_detail' pk=page.host.pk %}">{{page.host.domain_name}}</a>
                 {% endif %}<br/>
           </div>
       </div>
