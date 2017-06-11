@@ -154,6 +154,7 @@ class UserSerializer(serializers.ModelSerializer):
                                         p_obj=Page.objects.create(host=ph_obj,**page_data)
                                     else:
                                         p_obj=p_obj[0]
+                                        p_obj.host=ph_obj;
                                         val = page_data.get('weight', None)
                                         if val!=None:
                                             p_obj.weight=val
