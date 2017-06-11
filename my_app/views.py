@@ -70,8 +70,10 @@ def tests_list(request):
 @login_required
 def test_detail(request,pk):
     test = get_object_or_404(Test, pk=pk)
-    m,s=divmod(test.total_time,60)
-    time='%02d:%02d'%(m, s)
+    time=None
+    if test.total_time is not None:
+        m,s=divmod(test.total_time,60)
+        time='%02d:%02d'%(m, s)
     batches = Batch.objects.filter(test=pk)
     pages_tests=Page_Test.objects.filter(test=pk)
     for pt in pages_tests:
