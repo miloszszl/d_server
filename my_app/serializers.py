@@ -81,6 +81,7 @@ class TestSerializer(serializers.ModelSerializer):
         fields=('date','batch','pages_tests','total_time','total_weight','total_weight_w_pictures','tested_pages_amount',
                 'tested_buttons_amount','total_pictures_amount')
 
+
 class UserSerializer(serializers.ModelSerializer):
     tests=TestSerializer(source='test_u',many=True,required=False,allow_null=True)
     secret =SecretSerializer(allow_null=True,required=False,)
@@ -132,8 +133,7 @@ class UserSerializer(serializers.ModelSerializer):
                                 redirection_data=pt_data.pop('redirection', None)
 
                                 pt_obj = Page_Test.objects.create(test=t_obj, redirection=None, **pt_data)
-                                if page_data is not None and page_data.get('domain_name',None) is not None and\
-                                        page_data.get('domain_name',None)!="":
+                                if page_data is not None :#and page_data.get('domain_name',None) is not None and page_data.get('domain_name',None)!="":
                                     host_data=page_data.pop('host', None)
 
                                     ph_obj=None
@@ -278,144 +278,6 @@ class UserSerializer(serializers.ModelSerializer):
 
                                         pt_obj.redirection=page
                                         pt_obj.save()
-
-
-                                    # host_data = redirection_data.pop('host', None)
-                                    #
-                                    # ph_obj=None
-                                    # if host_data is not None:
-                                    #     ph_obj = Page_Host.objects.filter(domain_name=host_data['domain_name'],
-                                    #                                   ipv4=host_data['ipv4'])
-                                    #     if len(ph_obj) <= 0 :
-                                    #         ph_obj = Page_Host.objects.create(**host_data)
-                                    #     else:
-                                    #         ph_obj = ph_obj[0]
-                                    #
-                                    # page_connections_list = redirection_data.pop('page_connections', None)
-                                    # buttons_list = redirection_data.pop('buttons', None)
-                                    #
-                                    # p_obj = Page.objects.filter(address=redirection_data.get('address',None))
-                                    # if len(p_obj) <= 0:
-                                    #     p_obj = Page.objects.create(host=ph_obj, **redirection_data)
-                                    # else:
-                                    #     p_obj = p_obj[0]
-                                    #     val = redirection_data.get('weight', None)
-                                    #     if val != None:
-                                    #         p_obj.weight = val
-                                    #
-                                    #     val = redirection_data.get('encoding', None)
-                                    #     if val != None:
-                                    #         p_obj.encoding = val
-                                    #
-                                    #     val = redirection_data.get('weight_w_pictures', None)
-                                    #     if val != None:
-                                    #         p_obj.weight_w_pictures = val
-                                    #
-                                    #     val = redirection_data.get('cookies_present', None)
-                                    #     if val != None:
-                                    #         p_obj.cookies_present = val
-                                    #
-                                    #     val = redirection_data.get('force_test', None)
-                                    #     if val != None:
-                                    #         p_obj.force_test = redirection_data['force_test']
-                                    #     p_obj.save()
-                                    #
-                                    # if pt_obj is not None:
-                                    #     pt_obj.redirection=p_obj
-                                    #     pt_obj.save()
-                                    #
-                                    # # global_working_percentage
-                                    # total_pt1 = Page_Test.objects.filter(Q(page=p_obj) | Q(redirection=p_obj)).count()
-                                    # global_working_percentage_pt = None
-                                    # if total_pt1 > 0:
-                                    #     working_pt1 = Page_Test.objects.filter(Q(Q(page=p_obj) | Q(redirection=p_obj)),
-                                    #                                            is_working=True).count()
-                                    #     global_working_percentage_pt = working_pt1 / total_pt1 * 100.0
-                                    #
-                                    # # local working percentage
-                                    # d = datetime.today() - timedelta(days=30)
-                                    # tests_local = Test.objects.filter(date__gte=d)
-                                    # total_pt2 = Page_Test.objects.filter(Q(Q(page=p_obj) | Q(redirection=p_obj)), test__in=tests_local).count()
-                                    # last_month_working_percentage_pt = None
-                                    # if total_pt2 > 0:
-                                    #     working_pt2 = Page_Test.objects.filter(Q(Q(page=p_obj) | Q(redirection=p_obj)),
-                                    #                                            test__in=tests_local,is_working=True).count()
-                                    #     last_month_working_percentage_pt = working_pt2 / total_pt2 * 100.0
-                                    #
-                                    # # redirection percentage
-                                    # not_null_redir = Page_Test.objects.filter(~Q(redirection=None),
-                                    #                                           Q(Q(page=p_obj) | Q(redirection=p_obj))).count()
-                                    # redir_percentage=None
-                                    # if total_pt1>0:
-                                    #     redir_percentage=not_null_redir/total_pt1*100.0
-                                    #
-                                    # # avg_download time
-                                    # time_sum = Page_Test.objects.filter(Q(Q(page=p_obj) | Q(redirection=p_obj)),
-                                    #                                     download_time__gte=0).aggregate(
-                                    #                                     time=Sum('download_time'))
-                                    # avg_download_time=None
-                                    # if time_sum.get('time',None) is not None and len(time_sum)>0:
-                                    #     avg_download_time = time_sum.get('time',None) / total_pt1
-                                    #
-                                    # p_obj.last_month_working_percentage = last_month_working_percentage_pt
-                                    # p_obj.global_working_percentage = global_working_percentage_pt
-                                    # p_obj.redirection_percentage = redir_percentage
-                                    # p_obj.avg_download_time = avg_download_time
-                                    # p_obj.save()
-                                    #
-                                    # if page_connections_list is not None:
-                                    #     for pc in page_connections_list:
-                                    #         if pc is not None:
-                                    #             page_2 = pc.get('page_2',None)
-                                    #             if page_2 is not None:
-                                    #                 page_for_pc = Page.objects.filter(address=page_2.get('address',None))
-                                    #                 if len(page_for_pc) > 0:
-                                    #                     page_2_for_pc = page_for_pc[0]
-                                    #                     Page_Connection.objects.create(page_1=p_obj, page_2=page_2_for_pc)
-                                    #                 else:
-                                    #                     page_2_for_pc = Page.objects.create(address=page_2.get('address',None))
-                                    #                     Page_Connection.objects.create(page_1=p_obj, page_2=page_2_for_pc)
-                                    #
-                                    # # buttons
-                                    # if buttons_list is not None:
-                                    #     for button in buttons_list:
-                                    #         if button is not None:
-                                    #             t_p_b_list = button.pop('t_p_b', None)
-                                    #             b = Button.objects.filter(locator=button.get('locator',None), page=p_obj)
-                                    #             if len(b) <= 0:
-                                    #                 b = Button.objects.create(page=p_obj, **button)
-                                    #             else:
-                                    #                 b = b[0]
-                                    #
-                                    #             for t_p_b in t_p_b_list:
-                                    #                 if t_p_b is not None:
-                                    #                     T_P_B.objects.create(button=b, page_test=pt_obj,
-                                    #                                          is_working=t_p_b.get('is_working',None))
-                                    #
-                                    #                     # global_working_percentage
-                                    #                     total_tpb1 = T_P_B.objects.filter(button=b).count()
-                                    #                     global_working_percentage_tpb = None
-                                    #                     if total_tpb1 > 0:
-                                    #                         working_tpb1 = T_P_B.objects.filter(button=b,
-                                    #                                                             is_working=True).count()
-                                    #                         global_working_percentage_tpb = working_tpb1 / total_tpb1 * 100.0
-                                    #
-                                    #                     # local working percentage
-                                    #                     d2 = datetime.today() - timedelta(days=30)
-                                    #                     tl = Test.objects.filter(date__gte=d2)
-                                    #                     pt = Page_Test.objects.filter(page=p_obj, test__in=tl)
-                                    #                     total_tpb2 = T_P_B.objects.filter(button=b,
-                                    #                                                       page_test__in=pt).count()
-                                    #                     last_month_working_percentage_tpb = None
-                                    #                     if total_tpb2 > 0:
-                                    #                         working_tpb2 = T_P_B.objects.filter(button=b,
-                                    #                                                             page_test__in=pt,
-                                    #                                                             is_working=True).count()
-                                    #                         last_month_working_percentage_tpb = working_tpb2 / total_tpb2 * 100.0
-                                    #
-                                    #                         b.last_month_working_percentage = last_month_working_percentage_tpb
-                                    #                         b.global_working_percentage = global_working_percentage_tpb
-                                    #                         b.save()
 
                     if batches_list is not None:
                         for b_data in batches_list:
