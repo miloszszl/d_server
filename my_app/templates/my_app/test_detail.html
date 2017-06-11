@@ -21,7 +21,7 @@
               </div>
           </div>
           <div class="row">
-            <div class="col-sm-3"><b>Total pages weight[MB]:</b></div>
+            <div class="col-sm-3"><b>Total pages weight[KB]:</b></div>
               <div class="col-sm-9">
                   {% if test.total_weight is not None %}
                     {{ test.total_weight }}
@@ -30,16 +30,16 @@
                   {% endif %}
               </div>
           </div>
-          <div class="row">
-            <div class="col-sm-3"><b>Total pages weight with pictures[MB]:</b></div>
-              <div class="col-sm-9">
-                  {% if test.total_weight_w_pictures is not None %}
-                    {{ test.total_weight_w_pictures }}
-                  {% else %}
-                    Not tested ...
-                  {% endif %}
-              </div>
-          </div>
+          <!--<div class="row">-->
+            <!--<div class="col-sm-3"><b>Total pages weight with pictures[MB]:</b></div>-->
+              <!--<div class="col-sm-9">-->
+                  <!--{% if test.total_weight_w_pictures is not None %}-->
+                    <!--{{ test.total_weight_w_pictures }}-->
+                  <!--{% else %}-->
+                    <!--Not tested ...-->
+                  <!--{% endif %}-->
+              <!--</div>-->
+          <!--</div>-->
           <div class="row">
             <div class="col-sm-3"><b>Tested pages amount :</b></div>
               <div class="col-sm-9">

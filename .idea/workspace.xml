@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e49753-a823-490d-b9e3-7be785949901" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" afterPath="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" afterPath="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/test_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="111" column="31" lean-forward="true" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
+            <state relative-caret-position="770">
+              <caret line="178" column="22" lean-forward="false" selection-start-line="178" selection-start-column="22" selection-end-line="178" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
               </folding>
@@ -36,11 +37,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="tests_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/tests_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="43" column="7" lean-forward="false" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="pages_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
-              <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
+            <state relative-caret-position="224">
+              <caret line="57" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
               </folding>
@@ -48,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page_detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="189">
+              <caret line="24" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="361" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -63,11 +74,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="button_detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/button_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="53" column="12" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="hosts_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/hosts_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+            <state relative-caret-position="105">
+              <caret line="5" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
               </folding>
@@ -78,23 +99,11 @@
       <file leaf-file-name="host_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/host_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="11" column="75" lean-forward="false" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="105" />
+            <state relative-caret-position="140">
+              <caret line="8" column="53" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_app/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6153">
-              <caret line="317" column="66" lean-forward="false" selection-start-line="317" selection-start-column="66" selection-end-line="317" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#63#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,18 +115,6 @@
             <state relative-caret-position="252">
               <caret line="18" column="123" lean-forward="false" selection-start-line="18" selection-start-column="123" selection-end-line="18" selection-end-column="123" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_app/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -175,17 +172,16 @@
         <option value="$PROJECT_DIR$/my_app/serializers.py" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/hosts_list.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/pages_list.html" />
-        <option value="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/host_detail.html" />
         <option value="$PROJECT_DIR$/my_app/templates/my_app/page_detail.html" />
+        <option value="$PROJECT_DIR$/my_app/templates/my_app/test_detail.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -280,12 +276,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../projekt_zesp2/Rozproszone-testowanie-aplikacji-HTTP/django_app" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -313,19 +309,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="0" width="976" height="1038" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1944146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44777778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -586,13 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/button_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="85" column="22" lean-forward="false" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/logged_out.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -604,13 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="987">
           <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/tests_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -646,14 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,40 +668,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/hosts_list.html">
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/button_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="83" column="22" lean-forward="false" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/test_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="111" column="31" lean-forward="true" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="98">
+          <caret line="53" column="12" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/host_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="11" column="75" lean-forward="false" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="105" />
+        <state relative-caret-position="140">
+          <caret line="8" column="53" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
@@ -736,15 +687,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/hosts_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        <state relative-caret-position="189">
+          <caret line="24" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="361" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#4;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#1;n#ul#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/page_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/pages_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="57" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/tests_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="43" column="7" lean-forward="false" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_app/templates/my_app/test_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="178" column="22" lean-forward="false" selection-start-line="178" selection-start-column="22" selection-end-line="178" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
