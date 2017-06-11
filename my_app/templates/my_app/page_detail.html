@@ -60,6 +60,8 @@
           <div class="col-sm-9" style="word-wrap: break-word;">
                 {% if page.host is not None %}
                     <a href="{% url 'host_detail' pk=page.host.pk %}">{{page.host.domain_name}}</a>
+                {% else %}
+                    Not tested ...
                 {% endif %}<br/>
           </div>
       </div>
